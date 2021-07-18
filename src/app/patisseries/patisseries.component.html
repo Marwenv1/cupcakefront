@@ -1,0 +1,19 @@
+<strong>Mes Patisseries</strong>
+<table class="table">
+  <tr>
+    <th>nom</th>
+    <th>email</th>
+    <th>adresse</th>
+    <th>theme</th>
+  </tr>
+  <tbody *ngFor="let p of listPat; let i= index">
+    <tr>
+      <td>{{p.nom}}</td>
+      <td>{{p.email}}</td>
+      <td>{{p.adresse}}</td>
+      <td>{{p.theme}}</td>
+      <td><a href="#" class="btn btn-info">Modifier</a></td>
+      <td><a href="#" class="btn btn-danger">Supprimer</a></td>
+    </tr>
+  </tbody>
+</table>

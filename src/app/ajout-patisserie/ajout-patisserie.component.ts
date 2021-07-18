@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Patisserie} from '../model/patisserie';
+import {PatisserieServiceService} from '../services/patisserie-service.service';
 
 @Component({
   selector: 'app-ajout-patisserie',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ajout-patisserie.component.css']
 })
 export class AjoutPatisserieComponent implements OnInit {
-
-  constructor() { }
+  patisserie: Patisserie;
+  constructor(private servicePatisserie: PatisserieServiceService) { }
 
   ngOnInit(): void {
+    this.patisserie = new Patisserie();
+  }
+
+  save(){
+    this.patisserie.idutilisateur = 1;
+    this.patisserie.activer = 1;
+    this.servicePatisserie.postPatisserie(this.patisserie);
   }
 
 }
