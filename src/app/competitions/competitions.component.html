@@ -1,0 +1,19 @@
+<strong><h3>Competitions</h3></strong>
+<table class="table">
+  <tr>
+    <th>Nom</th>
+    <th>Date debut</th>
+    <th>Date fin</th>
+  </tr>
+  <tbody *ngFor="let p of listComp; let i= index">
+  <tr>
+    <td>{{p.nomCompetition}}</td>
+    <td>{{p.dateDebut| date : 'yyyy-MM-dd'}}</td>
+    <td>{{p.dateFin }}</td>
+    <td><button (click)="partager()">Partager</button></td>
+    <td><a routerLink="../competition/update/{{p.idCompetition}}" class="btn btn-info">Modifier</a></td>
+    <td><button (click)="delete(p.idCompetition)" class="btn btn-danger">Supprimer</button></td>
+  </tr>
+  </tbody>
+</table>
+<a routerLink="/competition/add">Ajouter une Competiton</a>
