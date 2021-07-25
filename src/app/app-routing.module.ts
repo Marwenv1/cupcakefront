@@ -10,6 +10,8 @@ import {UpdatePatisserieComponent} from './update-patisserie/update-patisserie.c
 import {CompetitionsComponent} from './competitions/competitions.component';
 import {AjoutCompetitionComponent} from './ajout-competition/ajout-competition.component';
 import {UpdateCompetitionComponent} from './update-competition/update-competition.component';
+import {UpdateProduitComponent} from './update-produit/update-produit.component';
+import {NotFoundComponent} from './not-found/not-found.component';
 
 const ROUTES: Routes = [
   {path: '', redirectTo: '/pat', pathMatch: 'full'},
@@ -18,9 +20,11 @@ const ROUTES: Routes = [
   {path: 'pat/update/:id', component: UpdatePatisserieComponent},
   {path: 'pat/:id/produit/add', component: AjoutProduitComponent},
   {path: 'pat/produits/:id', component: ProduitsComponent},
+  {path: 'produit/update/:id', component: UpdateProduitComponent},
   {path: 'competitions', component: CompetitionsComponent},
   {path: 'competition/add', component: AjoutCompetitionComponent},
-  {path: 'competition/update/:id', component: UpdateCompetitionComponent}
+  {path: 'competition/update/:id', component: UpdateCompetitionComponent},
+  {path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({

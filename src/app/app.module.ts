@@ -14,6 +14,9 @@ import { UpdateProduitComponent } from './update-produit/update-produit.componen
 import { CompetitionsComponent } from './competitions/competitions.component';
 import { AjoutCompetitionComponent } from './ajout-competition/ajout-competition.component';
 import { UpdateCompetitionComponent } from './update-competition/update-competition.component';
+import { AjoutPublicationComponent } from './ajout-publication/ajout-publication.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { PublicationsComponent } from './publications/publications.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +29,10 @@ import { UpdateCompetitionComponent } from './update-competition/update-competit
     UpdateProduitComponent,
     CompetitionsComponent,
     AjoutCompetitionComponent,
-    UpdateCompetitionComponent
+    UpdateCompetitionComponent,
+    AjoutPublicationComponent,
+    NotFoundComponent,
+    PublicationsComponent
   ],
     imports: [
         AppRoutingModule,

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Competition} from '../model/competition';
 import {CompetitionService} from '../services/competition.service';
 
@@ -9,8 +9,8 @@ import {CompetitionService} from '../services/competition.service';
 })
 export class CompetitionsComponent implements OnInit {
   listComp: Competition[];
+  idComp: number;
   constructor(private serviceCompetition: CompetitionService) { }
-
   ngOnInit(): void {
     this.serviceCompetition.getCompetitions().subscribe(
       (data: Competition[]) => this.listComp = data
@@ -21,5 +21,8 @@ export class CompetitionsComponent implements OnInit {
     () => this.listComp = this.listComp.filter(comp => comp.idCompetition !== id)
   );
   }
-  partager(){}
+  setCurrentComp(idComp: number){
+    this.idComp = idComp;
+  }
+
 }

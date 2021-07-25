@@ -3,6 +3,7 @@ import {Patisserie} from '../model/patisserie';
 import {HttpClient} from '@angular/common/http';
 import {Produit} from '../model/produit';
 import {Observable} from 'rxjs';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,10 @@ import {Observable} from 'rxjs';
 export class ProduitService {
   url = 'http://127.0.0.1:8000/pat/prod';
   produit: Produit;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) { }
   postProduit(produit: Produit){
-    return this.http.post(this.url + '/add'  , produit).subscribe((res: any) => {
+    return this.http.post('http://127.0.0.1:8000/produit/add'  , produit).subscribe((res: any) => {
+      this.router.navigate(['pat/produits/' + produit.idpatisserie]);
       console.log(res);
     });
   }
@@ -24,7 +26,8 @@ export class ProduitService {
   }
 
   updateProduit(produit: Produit){
-    return this.http.post(this.url + '/update'  , produit).subscribe((res: any) => {
+    return this.http.post(this.url + '/update/' + produit.refPdt  , produit).subscribe((res: any) => {
+      this.router.navigate(['pat/produits/' + produit.idpatisserie]);
       console.log(res);
     });
   }

@@ -14,6 +14,7 @@ export class ProduitsComponent implements OnInit {
   listProd: Produit[];
   idpatisserie: number;
   nom: string;
+  // tslint:disable-next-line:max-line-length
   constructor(private service: ActivatedRoute, private serviceProduit: ProduitService, private servicePatisserie: PatisserieServiceService) { }
 
   ngOnInit(): void {
