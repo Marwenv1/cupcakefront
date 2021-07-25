@@ -16,5 +16,10 @@ export class PatisseriesComponent implements OnInit {
       (data: Patisserie[]) => this.listPat = data
     );
   }
+  delete(id: number){
+    this.servicePatisserie.deletePatisserie(id).subscribe(
+      () => this.listPat = this.listPat.filter(pat => pat.id !== id)
+    );
+  }
 
 }

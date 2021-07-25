@@ -7,12 +7,20 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { PatisseriesComponent } from './patisseries/patisseries.component';
 import { AppRoutingModule } from './app-routing.module';
+import { AjoutProduitComponent } from './ajout-produit/ajout-produit.component';
+import { ProduitsComponent } from './produits/produits.component';
+import { UpdatePatisserieComponent } from './update-patisserie/update-patisserie.component';
+import { UpdateProduitComponent } from './update-produit/update-produit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AjoutPatisserieComponent,
-    PatisseriesComponent
+    PatisseriesComponent,
+    AjoutProduitComponent,
+    ProduitsComponent,
+    UpdatePatisserieComponent,
+    UpdateProduitComponent
   ],
     imports: [
         AppRoutingModule,

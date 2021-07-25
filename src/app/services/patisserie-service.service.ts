@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Patisserie} from '../model/patisserie';
+import {Observable} from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,5 +16,16 @@ export class PatisserieServiceService {
   }
   getPatisseries(){
     return this.http.get<Patisserie[]>(this.url);
+  }
+  deletePatisserie(id){
+    return this.http.get(this.url + '/del/' + id);
+  }
+  getPatisserie(id): Observable<Patisserie>{
+    return this.http.get<Patisserie>(this.url + '/' + id);
+  }
+  updatePatisserie(patisserie: Patisserie){
+    return this.http.post(this.url + '/update/' + patisserie.id  , patisserie).subscribe((res: any) => {
+      console.log(res);
+    });
   }
 }

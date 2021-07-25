@@ -12,8 +12,10 @@
       <td>{{p.email}}</td>
       <td>{{p.adresse}}</td>
       <td>{{p.theme}}</td>
-      <td><a href="#" class="btn btn-info">Modifier</a></td>
-      <td><a href="#" class="btn btn-danger">Supprimer</a></td>
+      <td><a routerLink="../pat/produits/{{p.id}}" class="btn btn-success">Voir les produits</a></td>
+      <td><a routerLink="../pat/update/{{p.id}}" class="btn btn-info">Modifier</a></td>
+      <td><button (click)="delete(p.id)" class="btn btn-danger">Supprimer</button></td>
     </tr>
   </tbody>
 </table>
+<a routerLink="../pat/add">Ajouter une patisserie</a>
