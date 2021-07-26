@@ -15,10 +15,10 @@ export class AjoutPublicationComponent implements OnInit {
 
   ngOnInit(): void {
     this.publication = new Publication();
-    this.publication.idcompetition = this.idCompetition;
+
   }
   save(){
-    this.publication.texte = 'test';
+    this.publication.idcompetition = this.idCompetition;
     this.servicePublication.postPublication(this.publication);
   }
 

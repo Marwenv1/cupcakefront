@@ -12,8 +12,10 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ProduitsComponent implements OnInit {
   listProd: Produit[];
+  list: Produit[];
   idpatisserie: number;
   nom: string;
+  recherche: string;
   // tslint:disable-next-line:max-line-length
   constructor(private service: ActivatedRoute, private serviceProduit: ProduitService, private servicePatisserie: PatisserieServiceService) { }
 
@@ -25,11 +27,14 @@ export class ProduitsComponent implements OnInit {
     this.serviceProduit.getProduits(this.service.snapshot.params.id).subscribe(
       (data: Produit[]) => this.listProd = data
     );
+    this.list = this.listProd;
+    this.recherche = '';
   }
   delete(id: number){
     this.serviceProduit.deleteProduit(id).subscribe(
       () => this.listProd = this.listProd.filter(pat => pat.refPdt !== id)
     );
   }
+
 
 }

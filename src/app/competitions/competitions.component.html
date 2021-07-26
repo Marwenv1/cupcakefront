@@ -11,13 +11,13 @@
     <td>{{p.nomCompetition}}</td>
     <td>{{p.dateDebut}}</td>
     <td>{{p.dateFin }}</td>
-    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="setCurrentComp(p.idCompetition)" )>Partager</button></td>
+    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter" (click)="setCurrentComp(p.idCompetition)" >Partager</button></td>
     <td><a routerLink="../competition/update/{{p.idCompetition}}" class="btn btn-info">Modifier</a></td>
     <td><button (click)="delete(p.idCompetition)" class="btn btn-danger">Supprimer</button></td>
   </tr>
   </tbody>
 </table>
-<a routerLink="/competition/add">Ajouter une Competiton</a>
+<a routerLink="/admin/competition/add">Ajouter une Competiton</a>
 
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">

@@ -13,7 +13,10 @@ export class CompetitionsComponent implements OnInit {
   constructor(private serviceCompetition: CompetitionService) { }
   ngOnInit(): void {
     this.serviceCompetition.getCompetitions().subscribe(
-      (data: Competition[]) => this.listComp = data
+      (data: Competition[]) => {
+        this.listComp = data;
+        console.log(data);
+      }
     );
   }
   delete(id: number){

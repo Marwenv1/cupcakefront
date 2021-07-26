@@ -1,4 +1,10 @@
-<strong>Les produits de la patisserie {{nom}} </strong>
+<h3>Les produits de la patisserie {{nom}} </h3>
+<form class="form">
+  <div class="form-group">
+    <label>Recherche:</label>
+    <input class="form-control" name="recherche" [(ngModel)]="recherche"  placeholder="Recherche ..." >
+  </div>
+</form>
 <table class="table">
   <tr>
     <th>Designation</th>
@@ -9,13 +15,13 @@
     <th>Image</th>
   </tr>
   <tbody *ngFor="let p of listProd; let i= index">
-  <tr>
+  <tr *ngIf="p.description==recherche || p.designation==recherche || recherche==''">
     <td>{{p.designation}}</td>
     <td>{{p.description}}</td>
     <td>{{p.prix}}</td>
     <td>{{p.qteStock}}</td>
     <td>{{p.note}}</td>
-    <td>{{p.image}}</td>
+    <td><img src="{{p.image}}" style="height: 100px; width: 100px;"></td>
     <td><a routerLink="/produit/update/{{p.refPdt}}" class="btn btn-info">Modifier</a></td>
     <td><button (click)="delete(p.refPdt)"  class="btn btn-danger">Supprimer</button></td>
   </tr>

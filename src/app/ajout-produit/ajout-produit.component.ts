@@ -18,6 +18,7 @@ export class AjoutProduitComponent implements OnInit {
     this.produit.idpatisserie = this.service.snapshot.params.id;
   }
   save(){
+    console.log(this.produit);
     this.serviceProduit.postProduit(this.produit);
   }
 
